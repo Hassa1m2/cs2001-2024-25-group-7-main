@@ -1,0 +1,95 @@
+.account-management {
+    padding-top: 2rem;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    flex: 1;
+}
+
+.account-management h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.account-data-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid #EBEBEB;
+    border-radius: 15px;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.delete-account-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid #EBEBEB;
+    border-radius: 15px;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.account-management h4 {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    text-align: left;
+}
+
+.account-management h5 {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    font-weight: 400;
+    color: #6c757d;
+    margin: 0.5rem 0 0;
+    padding-bottom: 22px;
+}
+
+.download-data-button{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    padding: 0.6rem 1.2rem;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-account-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #E31818;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 0.6rem 1.2rem;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-data-button:hover {
+    background-color: #f1f1f1;
+}
+
+.delete-account-button:hover {
+    background-color: #d11212;
+}
+
+.download-data-button svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: #000;
+}

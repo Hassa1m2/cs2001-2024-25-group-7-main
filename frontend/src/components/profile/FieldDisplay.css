@@ -1,0 +1,75 @@
+.field-display {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+  
+.field-name {
+    font-size: clamp(0.7rem, 0.7vw, 0.8125rem);
+    color: #8C98A9;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 0.3125rem;
+}
+  
+.field-content {
+    min-height: 2rem; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+  
+.field-value {
+    font-size: clamp(1rem, 1vw, 1.25rem);
+    color: #000000;
+    margin: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+}
+  
+.edit-input {
+    border: 1px solid #EBEBEB;
+    border-radius: 10px;
+    padding: 0.3rem;
+    font-size: clamp(1rem, 1vw, 1.25rem);
+    width: 80%;
+    box-sizing: border-box;
+    color: #000000;
+}
+  
+.edit-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(32, 32, 32, 0.2);
+}
+
+.input-error {
+  border-color: red !important;
+}
+
+.error-message {
+    font-size: 0.65rem;
+    color: red;
+    position: absolute;
+    bottom: -1rem; 
+    left: 0;
+    min-height: 1rem;
+    visibility: visible;
+}
+  
+.error-message:empty::before {
+    content: " ";
+    visibility: hidden;
+}

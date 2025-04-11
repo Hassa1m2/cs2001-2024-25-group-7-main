@@ -1,0 +1,58 @@
+.preferences {
+    padding-top: 2rem;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    flex: 1;
+}
+
+.privacy-settings {
+    border: 1px solid #EBEBEB;
+    border-radius: 15px;
+    padding: 1.5rem 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.privacy-settings h3 {
+    text-align: left;
+    margin: 0;
+    margin-bottom: clamp(1.5rem, 2vw, 2.5rem);
+    font-weight: 600;
+}
+
+.preferences h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.privacy-field {
+    padding-bottom: 27px;
+}
+
+.privacy-field, .location-field {
+    gap: 1rem; 
+    align-items: center;
+}
+  
+.preferences h4, .preferences h5 {
+    margin: 0; 
+    text-align: left;
+    
+}
+
+.preferences h4 {
+    font-size: clamp(0.8rem, 1.1vw, 1.1rem);
+    font-weight: 600;
+    padding-bottom: 2px;
+}
+
+.preferences h5 {
+    font-size: clamp(0.8rem, 1.1vw, 1.1rem);
+    font-weight: 400;
+    color: #8B8B8B;
+}
+
+.privacy-field, .location-field {
+    display: flex;
+    margin-bottom: 16px;
+}

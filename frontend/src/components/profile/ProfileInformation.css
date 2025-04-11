@@ -1,0 +1,81 @@
+.profile-information {
+    padding-top: 2rem;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    flex: 1;
+}
+
+.profile-information h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.profile-summary {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border: 1px solid #EBEBEB;
+    border-radius: 15px;
+    padding: 1.6rem 2.1rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 2rem;
+}
+
+.personal-info {
+    border: 1px solid #EBEBEB;
+    border-radius: 15px;
+    padding: 2rem 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.profile-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+}
+.profile-summary .field-display {
+    flex: 1;
+    max-width: 400px;
+}
+
+.personal-info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.personal-info-row:last-child {
+    margin-bottom: 0;
+}
+
+.personal-info-row .field-display {
+    flex: 1; 
+    min-width: 300px; 
+}
+
+.profile-edit-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #8C98A9;
+    background-color: rgba(210, 105, 30, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button {
+    margin-left: 20px;
+}
+
+.profile-summary, .personal-info {
+    position: relative; 
+}
+

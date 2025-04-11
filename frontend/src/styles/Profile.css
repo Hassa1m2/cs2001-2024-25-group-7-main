@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Instrument Sans';
+
+    text-align: center;
+}
+
+.profile-page {
+    display: flex;
+    min-height: 100vh
+}
+
+.divider {
+    height: 1px;
+    background-color: #E5E7EB;
+    width: 100%;
+}
