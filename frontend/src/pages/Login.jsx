@@ -7,19 +7,17 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     try {
-      const response = await fetch(import.meta.env.VITE_API_URL + "/login", {
+      const response = await fetch(import.meta.env.VITE_API_URL + "/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -29,13 +27,14 @@ const Login = () => {
 
       if (response.ok) {
         localStorage.setItem("token", data.token);
-        navigate("/dashboard"); // Redirect after login
+        navigate("/profile"); // Changed from /dashboard to existing route
       } else {
         setError(data.message || "Invalid username or password.");
       }
     } catch (error) {
       setError("Network error. Please try again.");
     }
+
     setLoading(false);
   };
 
@@ -80,7 +79,10 @@ const Login = () => {
           </button>
         </form>
         <p className="mt-4 text-center text-gray-400">
-          Don't have an account? <Link to="/signup" className="text-blue-400 hover:text-blue-300 font-semibold">Sign up</Link>
+          Don't have an account?{" "}
+          <Link to="/signup" className="text-blue-400 hover:text-blue-300 font-semibold">
+            Sign up
+          </Link>
         </p>
       </div>
     </div>

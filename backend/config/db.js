@@ -21,7 +21,7 @@ const connectDB = async () => {
     try {
         // Connect to MongoDB (removing deprecated options)
         const conn = await mongoose.connect(process.env.MONGO_URI, {
-            dbName: "your_database_name" // Replace with actual DB name if needed
+            dbName: "hassam" // Replace with actual DB name if needed
         });
 
         console.log(`✅ MongoDB Successfully Connected: ${conn.connection.host}`);

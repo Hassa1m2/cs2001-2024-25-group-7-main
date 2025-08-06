@@ -3,35 +3,33 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    forename: "",
+    forenames: "",
     surname: "",
     username: "",
     email: "",
     password: "",
-    dob: "",
+    dateOfBirth: ""
   });
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
-    // Simple validation
     if (!formData.email.includes("@")) {
       setError("Please enter a valid email.");
       setLoading(false);
       return;
     }
+
     if (formData.password.length < 6) {
       setError("Password must be at least 6 characters long.");
       setLoading(false);
@@ -39,7 +37,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch(import.meta.env.VITE_API_URL + "/signup", {
+      const response = await fetch("http://localhost:5000/api/v1/users/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -48,11 +46,12 @@ const Signup = () => {
       const data = await response.json();
 
       if (response.ok) {
-        navigate("/login"); // Redirect after successful signup
+        navigate("/success"); // change route as needed
       } else {
-        setError(data.message || "Signup failed. Please try again.");
+        setError(data.message || data.error || "Signup failed. Please try again.");
       }
     } catch (error) {
+      console.error("Signup error:", error);
       setError("Network error. Please try again.");
     }
 
@@ -69,8 +68,8 @@ const Signup = () => {
             <label className="block text-gray-300 font-medium">Forename</label>
             <input
               type="text"
-              name="forename"
-              value={formData.forename}
+              name="forenames"
+              value={formData.forenames}
               onChange={handleChange}
               className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your forename"
@@ -129,8 +128,8 @@ const Signup = () => {
             <label className="block text-gray-300 font-medium">Date of Birth</label>
             <input
               type="date"
-              name="dob"
-              value={formData.dob}
+              name="dateOfBirth"
+              value={formData.dateOfBirth}
               onChange={handleChange}
               className="w-full p-3 border border-gray-600 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
@@ -147,7 +146,10 @@ const Signup = () => {
           </button>
         </form>
         <p className="mt-4 text-center text-gray-400">
-          Already have an account? <Link to="/login" className="text-blue-400 hover:text-blue-300 font-semibold">Log in</Link>
+          Already have an account?{" "}
+          <Link to="/login" className="text-blue-400 hover:text-blue-300 font-semibold">
+            Log in
+          </Link>
         </p>
       </div>
     </div>
